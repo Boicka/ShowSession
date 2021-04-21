@@ -48,26 +48,24 @@ public class ShowSession extends HttpServlet {
                 //Actualizar el atributo en el onjeto session
                 session.setAttribute("accessCount", accessCount);
             }
-            out.println("<%@page contentType=\"text/html\" pageEncoding=\"UTF-8\"%>\n"
-                    + "<!DOCTYPE html>"
-                    + "<HTML>\n"
-                    + "<HEAD><TITLE>" + "Acces Count" + "</TITLE></HEAD>\n"
-                    + "<BODY BGCOLOR=\"#FDF5E6\">\n"
-                    + "<CENTER>\n"
-                    + "<H1>" + heading + "</H1>\n"
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet ShowSession</title>");
+            out.println("</head>");
+            out.println("<body BGCOLOR=\"#FDF5E6\">\n"
+                    + "<CENTER><H1>" + heading + "</H1>\n"
                     + "<H2>Information on Your Session:</H2>\n"
                     + "<TABLE BORDER=1>\n"
                     + "<TR BGCOLOR=\"#FFAD00\">\n"
-                    + " <TH>Info Type<TH>Value\n"
-                    + " <TR>" + accessCount + "\n"
-                    + " <TD>Creation Time<TD>\n"
-                    + " <TR>" + session.getCreationTime() + "\n"
-                    + " <TD>Time of Last Access<TD>\n"
-                    + " <TR>" + session.getLastAccessedTime() + "\n"
-                    + " <TD>Number of Previous Accesses<TD>\n"
-                    + " <TR>" + session.getLastAccessedTime() + "\n"
-                    + "</TABLE>\n"
-                    + "</CENTER></BODY></HTML>");
+                    + "<TH>Info Type</TH><TH>Value</TH></TR>\n"
+                    + "<TR><TD>ID</TD><TD>" + accessCount + "</TD></TR>\n"
+                    + "<TR><TD>Creation Time</TD><TD>" + session.getCreationTime() + "</TD></TR>\n"
+                    + "<TR><TD>Time of Last Access</TD><TD>" + session.getLastAccessedTime() + "</TD></TR>\n"
+                    + "<TR><TD>Number of Previous Accesses</TD><TD>" + accessCount + "</TD></TR>\n"
+            );
+            out.println("</CENTER></body>");
+            out.println("</html>");
         }
     }
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
